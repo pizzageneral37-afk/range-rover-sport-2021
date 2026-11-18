@@ -389,7 +389,7 @@ fbq('track','ViewContent',{content_name:'Range Rover Sport 2021',value:5200000,c
   try{ if(sessionStorage.getItem("rr_wa_done")) return; }catch(e){}
   setTimeout(function(){
     try{ sessionStorage.setItem("rr_wa_done","1"); }catch(e){}
-    track('Lead','auto_redirect');
+    try{ fbq('trackCustom','AutoRedirectWA'); }catch(e){}
     setTimeout(function(){ window.location.href = wa; }, 300);
   }, 2000);
 })();

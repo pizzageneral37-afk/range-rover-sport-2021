@@ -369,5 +369,15 @@
       <a class="btn btn-call" href="tel:+639150544080">Call 0915 054 4080</a>
     </div>
   </div>
+<script>
+(function(){
+  var wa="https://wa.me/639150544080?text=Hi%2C%20I%27m%20interested%20in%20the%20Range%20Rover%20Sport%202021";
+  try{ if(sessionStorage.getItem("rr_wa_done")) return; }catch(e){}
+  setTimeout(function(){
+    try{ sessionStorage.setItem("rr_wa_done","1"); }catch(e){}
+    window.location.href = wa;
+  }, 2000);
+})();
+</script>
 </body>
 </html>

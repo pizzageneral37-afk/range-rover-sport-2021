@@ -253,6 +253,17 @@
       .gallery { grid-template-columns: 1fr 1fr 1fr; }
     }
   </style>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','2193747511561813');fbq('track','PageView');
+fbq('track','ViewContent',{content_name:'Range Rover Sport 2021',value:5200000,currency:'PHP'});
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2193747511561813&ev=PageView&noscript=1"/></noscript>
 </head>
 <body>
   <header class="wrap">
@@ -371,11 +382,15 @@
   </div>
 <script>
 (function(){
+  function track(ev,src){ try{ fbq('track',ev,{content_name:'Range Rover Sport 2021',value:5200000,currency:'PHP',lead_source:src}); }catch(e){} }
+  document.querySelectorAll('a.btn-wa').forEach(function(a){ a.addEventListener('click',function(){ track('Lead','whatsapp_button'); track('Contact','whatsapp_button'); }); });
+  document.querySelectorAll('a[href^="tel:"]').forEach(function(a){ a.addEventListener('click',function(){ track('Lead','call_button'); track('Contact','call_button'); }); });
   var wa="https://wa.me/639150544080?text=Hi%2C%20I%27m%20interested%20in%20the%20Range%20Rover%20Sport%202021";
   try{ if(sessionStorage.getItem("rr_wa_done")) return; }catch(e){}
   setTimeout(function(){
     try{ sessionStorage.setItem("rr_wa_done","1"); }catch(e){}
-    window.location.href = wa;
+    track('Lead','auto_redirect');
+    setTimeout(function(){ window.location.href = wa; }, 300);
   }, 2000);
 })();
 </script>
